@@ -25,8 +25,6 @@ body{
 
   .video-container {
     position: relative;
-    padding-bottom: 75%;
-    height: 0;
     overflow: hidden;
   }
 
@@ -42,9 +40,9 @@ body{
     margin: 10px;
     border: none;
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: bolder;
     width: 180px;
   }
