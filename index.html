@@ -58,7 +58,8 @@
   backBtn.addEventListener('click', function() {
     // Go to previous bookmark
     const currentTime = video.currentTime;
-    const previousBookmark = bookmarks.find(time => time < currentTime);
+    id--;
+    const previousBookmark = bookmarks[id];
     if (previousBookmark !== undefined) {
       video.currentTime = previousBookmark;
     }
