@@ -59,7 +59,7 @@
 
     backBtn.addEventListener('click', function() {
       // Go to previous bookmark
-      const currentTime = video.currentTime;
+      var currentTime = video.currentTime;
       id = id -1;
       if(id <= 0) id = 0;
       var previousBookmark = bookmarks[id];
@@ -70,10 +70,10 @@
 
     nextBtn.addEventListener('click', function() {
       // Go to next bookmark
-      const currentTime = video.currentTime;
+      var currentTime = video.currentTime;
       id = id +1;
       if(id >= bookmarks.length) id = bookmarks.length - 1;
-      const nextBookmark = bookmarks[id];
+      var nextBookmark = bookmarks[id];
       if (nextBookmark !== undefined) {
         video.currentTime = nextBookmark;
       }
