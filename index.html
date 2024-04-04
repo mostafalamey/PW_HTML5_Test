@@ -66,6 +66,7 @@
   nextBtn.addEventListener('click', function() {
     // Go to next bookmark
     const currentTime = video.currentTime;
+    id = 0;
     const nextBookmark = bookmarks.find(time => time > currentTime);
     if (nextBookmark !== undefined) {
       video.currentTime = nextBookmark;
