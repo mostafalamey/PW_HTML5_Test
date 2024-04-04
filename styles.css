@@ -27,7 +27,6 @@ body{
     position: relative;
     padding-bottom: 155%;
     height: 0;
-    overflow: hidden;
   }
 
   .controls {
