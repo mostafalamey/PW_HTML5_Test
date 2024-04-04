@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Video Player</title>
+<style>
+  /* Add your CSS styling here */
+  .video-container {
+    position: relative;
+  }
+  .controls {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+  }
+  /* ... other styles ... */
+</style>
+</head>
+<body>
+
+<div class="video-container" id="video-container">
+  <!-- The video element -->
+  <video id="video" width="640" height="360" preload="metadata">
+    <source src="All.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <!-- Video Controls -->
+  <div class="controls">
+    <button id="play-pause">Play</button>
+    <button id="back">Back</button>
+    <button id="next">Next</button>
+    <!-- Add other controls as needed -->
+  </div>
+</div>
+
+<script>
+  // JavaScript to control the video player
+  const video = document.getElementById('video');
+  const playPauseBtn = document.getElementById('play-pause');
+  const backBtn = document.getElementById('back');
+  const nextBtn = document.getElementById('next');
+
+  // Define bookmarks
+  const bookmarks = [30, 90, 150]; // seconds
+
+  playPauseBtn.addEventListener('click', function() {
+    if (video.paused) {
+      video.play();
+      this.textContent = 'Pause';
+    } else {
+      video.pause();
+      this.textContent = 'Play';
+    }
+  });
+
+  backBtn.addEventListener('click', function() {
+    // Go to previous bookmark
+    const currentTime = video.currentTime;
+    const previousBookmark = bookmarks.slice().reverse().find(time => time < currentTime);
+    if (previousBookmark !== undefined) {
+      video.currentTime = previousBookmark;
+    }
+  });
+
+  nextBtn.addEventListener('click', function() {
+    // Go to next bookmark
+    const currentTime = video.currentTime;
+    const nextBookmark = bookmarks.find(time => time > currentTime);
+    if (nextBookmark !== undefined) {
+      video.currentTime = nextBookmark;
+    }
+  });
+
+  // Add event listeners for other controls as needed
+</script>
+
+</body>
+</html>
