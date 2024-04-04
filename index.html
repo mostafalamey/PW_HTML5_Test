@@ -60,6 +60,7 @@
     const currentTime = video.currentTime;
     id--;
     const previousBookmark = bookmarks[id];
+    print(previousBookmark);
     if (previousBookmark !== undefined) {
       video.currentTime = previousBookmark;
     }
@@ -70,6 +71,7 @@
     const currentTime = video.currentTime;
     id++;
     const nextBookmark = bookmarks[id];
+    print(nextBookmark);
     if (nextBookmark !== undefined) {
       video.currentTime = nextBookmark;
     }
