@@ -43,6 +43,7 @@
 
   // Define bookmarks
   const bookmarks = [3, 11, 21]; // seconds
+  const id = 0;
 
   playPauseBtn.addEventListener('click', function() {
     if (video.paused) {
@@ -66,7 +67,6 @@
   nextBtn.addEventListener('click', function() {
     // Go to next bookmark
     const currentTime = video.currentTime;
-    const id = 0;
     id++;
     const nextBookmark = bookmarks[id];
     if (nextBookmark !== undefined) {
