@@ -20,12 +20,14 @@ body{
   }
 
   .logo img{
-    max-width: 120px;
+    max-width: 200px;
   }
 
   .video-container {
-    justify-content: center;
-    text-align: center;
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
   }
 
   .controls {
