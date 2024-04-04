@@ -40,11 +40,10 @@ body{
     margin: 10px;
     border: none;
     border-radius: 10px;
-    padding: 10px;
+    padding: 30px;
     text-align: center;
-    font-size: 20px;
-    font-weight: 800;
-    width: 120px;
+    font-size: 26px;
+    width: 180px;
   }
   
   footer {
