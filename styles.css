@@ -1,0 +1,52 @@
+body{
+    font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+
+  header{
+    display: flex table-column;
+  }
+
+  header div{
+    margin: 4px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logo{
+    justify-content: left;
+    text-align: left;
+  }
+
+  .logo img{
+    max-width: 120px;
+  }
+
+  .video-container {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .controls {
+    background-color: grey;
+    display: flex; 
+    justify-content: center;
+  }
+
+  button {
+    background-color: rgb(83, 83, 83);
+    color: white;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 120px;
+  }
+  
+  footer {
+    padding: 2px 20px;
+    background-color: black;
+    color: whitesmoke;
+  }
