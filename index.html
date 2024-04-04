@@ -67,7 +67,8 @@
     // Go to next bookmark
     const currentTime = video.currentTime;
     id = 0;
-    const nextBookmark = bookmarks.find(time => time > currentTime);
+    id++;
+    const nextBookmark = bookmarks[id];
     if (nextBookmark !== undefined) {
       video.currentTime = nextBookmark;
     }
