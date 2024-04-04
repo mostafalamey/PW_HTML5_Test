@@ -42,7 +42,7 @@
   const nextBtn = document.getElementById('next');
 
   // Define bookmarks
-  const bookmarks = [3, 11, 21]; // seconds
+  const bookmarks = [0, 3, 11, 21]; // seconds
   const id = 0;
 
   playPauseBtn.addEventListener('click', function() {
@@ -59,8 +59,9 @@
     // Go to previous bookmark
     const currentTime = video.currentTime;
     id--;
+    if(id < 0)
+      id = 0;
     const previousBookmark = bookmarks[id];
-    print(previousBookmark);
     if (previousBookmark !== undefined) {
       video.currentTime = previousBookmark;
     }
@@ -70,8 +71,9 @@
     // Go to next bookmark
     const currentTime = video.currentTime;
     id++;
+    if(id >= bookmarks.length)
+      id = bookmarks.length -1;
     const nextBookmark = bookmarks[id];
-    print(nextBookmark);
     if (nextBookmark !== undefined) {
       video.currentTime = nextBookmark;
     }
