@@ -25,6 +25,8 @@ body{
 
   .video-container {
     position: relative;
+    padding-bottom: 155%;
+    height: 0;
     overflow: hidden;
   }
 
