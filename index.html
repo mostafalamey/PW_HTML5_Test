@@ -44,8 +44,8 @@
     const nextBtn = document.getElementById('next');
 
     // Define bookmarks
-    var bookmarks = [0, 21.5, 53, 86, 112, 139, 167, 190]; // seconds
-    var id = 0;
+    const bookmarks = [0, 21.75, 53.1, 86.1, 112.75, 139.8, 167.25, 190.7]; // seconds
+    let id = 0;
 
     playPauseBtn.addEventListener('click', function() {
       if (video.paused) {
@@ -57,25 +57,33 @@
       }
     });
 
+    video.addEventListener('timeupdate', function() {
+      const nextBookmark = bookmarks[Math.min(id + 1, bookmarks.length - 1)];
+      if (nextBookmark !== undefined && video.currentTime >= nextBookmark) {
+        video.currentTime = bookmarks[id];
+      }
+    });    
+
     backBtn.addEventListener('click', function() {
+      // Disable button if at first bookmark
+      if(id <= 0) return;
+      
       // Go to previous bookmark
-      var currentTime = video.currentTime;
       id = id -1;
-      if(id <= 0) id = 0;
-      var previousBookmark = bookmarks[id];
+      let previousBookmark = bookmarks[id];
       if (previousBookmark !== undefined) {
         video.currentTime = previousBookmark;
       }
     });
 
     nextBtn.addEventListener('click', function() {
-      // Go to next bookmark
-      var currentTime = video.currentTime;
-      id = id +1;
-      if(id >= bookmarks.length) id = bookmarks.length - 1;
-      var nextBookmark = bookmarks[id];
-      if (nextBookmark !== undefined) {
-        video.currentTime = nextBookmark;
+      if(id < bookmarks.length-1) {
+        // Go to next bookmark
+        id = id +1;
+        let nextBookmark = bookmarks[id];
+        if (nextBookmark !== undefined) {
+          video.currentTime = nextBookmark;
+        }
       }
     });
 
